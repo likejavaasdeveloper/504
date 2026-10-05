@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vocabulary quiz with immediate feedback.">
+  <title>Vocabulary Quiz</title>
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+  <main class="site-shell quiz-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Essential Words Quiz home">
+        <span class="brand-mark" aria-hidden="true">504</span>
+        <span>Essential Words Quiz</span>
+      </a>
+      <a class="back-link" href="index.html">← All lessons</a>
+    </header>
+
+    <section class="quiz-intro" aria-labelledby="lesson-title">
+      <p class="eyebrow" id="lesson-label">Lesson 01</p>
+      <h1 id="lesson-title">Vocabulary quiz</h1>
+      <p id="lesson-description">Answer ten questions. You will receive feedback after each answer.</p>
+    </section>
+
+    <section id="quiz-view" class="quiz-card" aria-live="polite">
+      <div class="quiz-meta">
+        <span id="progress">Question 1 of 10</span>
+        <span class="attempt-note">One answer per question</span>
+      </div>
+      <div class="progress-track" aria-hidden="true"><div id="progress-bar" class="progress-bar"></div></div>
+
+      <div class="question-area">
+        <p class="question-number" id="question-number">Question 1</p>
+        <h2 id="question-text">Loading question…</h2>
+        <div id="choices" class="choices" role="group" aria-label="Answer choices"></div>
+      </div>
+
+      <div id="feedback" class="feedback" hidden tabindex="-1"></div>
+      <button id="next-button" class="button button-primary next-button" type="button" hidden>Next question <span aria-hidden="true">→</span></button>
+    </section>
+
+    <section id="result-view" class="result-card" aria-live="polite" hidden>
+      <p class="eyebrow">Quiz complete</p>
+      <h1 id="result-title">Nice work!</h1>
+      <div class="score-display">
+        <p id="correct-count">Correct Answers: 0 / 10</p>
+        <p id="score-percent">Score: 0%</p>
+      </div>
+      <p id="result-message"></p>
+      <button id="try-again-button" class="button button-primary" type="button">Try Again</button>
+    </section>
+
+    <noscript><p class="noscript-message">This quiz needs JavaScript enabled in your browser.</p></noscript>
+  </main>
+
+  <script src="questions/lesson-01.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
