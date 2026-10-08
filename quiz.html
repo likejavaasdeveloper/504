@@ -54,7 +54,13 @@
     <noscript><p class="noscript-message">This quiz needs JavaScript enabled in your browser.</p></noscript>
   </main>
 
-  <script src="questions/lesson-01.js"></script>
+  <script>
+    (function () {
+      var requestedLesson = new URLSearchParams(window.location.search).get("lesson");
+      var lessonNumber = requestedLesson === "2" ? "02" : "01";
+      document.write('<script src="questions/lesson-' + lessonNumber + '.js"><\/script>');
+    }());
+  </script>
   <script src="js/quiz.js"></script>
 </body>
 </html>
