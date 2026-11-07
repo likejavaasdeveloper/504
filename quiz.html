@@ -57,7 +57,8 @@
   <script>
     (function () {
       var requestedLesson = new URLSearchParams(window.location.search).get("lesson");
-      var lessonNumber = requestedLesson === "3" ? "03" : requestedLesson === "2" ? "02" : "01";
+      var parsedLesson = Number.parseInt(requestedLesson, 10);
+      var lessonNumber = parsedLesson >= 1 && parsedLesson <= 42 ? String(parsedLesson).padStart(2, "0") : "01";
       document.write('<script src="questions/lesson-' + lessonNumber + '.js"><\/script>');
     }());
   </script>

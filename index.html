@@ -28,30 +28,20 @@
           <p class="eyebrow">Choose a lesson</p>
           <h2 id="lessons-title">Start practicing</h2>
         </div>
-        <span class="lesson-count">3 lessons available</span>
+        <span class="lesson-count">42 lessons available</span>
       </div>
 
       <div class="lesson-grid">
-        <a class="lesson-card" href="quiz.html?lesson=1">
-          <span class="lesson-number">Lesson 01</span>
-          <h3>Words for a strong start</h3>
-          <p>Practice meaning, context, synonyms, and everyday use.</p>
-          <span class="card-link">Begin quiz <span aria-hidden="true">→</span></span>
-        </a>
-
-        <a class="lesson-card" href="quiz.html?lesson=2">
-          <span class="lesson-number">Lesson 02</span>
-          <h3>Words for dark and difficult moments</h3>
-          <p>Practice meaning, context, synonyms, and everyday use.</p>
-          <span class="card-link">Begin quiz <span aria-hidden="true">→</span></span>
-        </a>
-
-        <a class="lesson-card" href="quiz.html?lesson=3">
-          <span class="lesson-number">Lesson 03</span>
-          <h3>Words for clear choices and value</h3>
-          <p>Practice meaning, context, synonyms, and everyday use.</p>
-          <span class="card-link">Begin quiz <span aria-hidden="true">→</span></span>
-        </a>
+        <script>
+          for (var lessonNumber = 1; lessonNumber <= 42; lessonNumber += 1) {
+            var paddedLesson = String(lessonNumber).padStart(2, "0");
+            document.write('<a class="lesson-card" href="quiz.html?lesson=' + lessonNumber + '">' +
+              '<span class="lesson-number">Lesson ' + paddedLesson + '</span>' +
+              '<h3>Lesson ' + paddedLesson + ' vocabulary practice</h3>' +
+              '<p>Practice meaning, context, and practical everyday use.</p>' +
+              '<span class="card-link">Begin quiz <span aria-hidden="true">→</span></span></a>');
+          }
+        </script>
       </div>
     </section>
 
